@@ -13,7 +13,7 @@ size_t i, nSize = size;
 int temp, flag;
 
 if (array == NULL || size < 2)
-		return;
+return;
 
 while (nSize)
 {
