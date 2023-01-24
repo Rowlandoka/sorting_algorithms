@@ -1,36 +1,34 @@
 #include "sort.h"
-
 /**
- *bubble_sort- sort array in ascending order
- * @array: array to be sorted
- * @size: size of the array
- * Return: void
+ * bubble_sort - sorts bubbly
+ * @array: array to sort
+ * @size: size
+ *
  */
-
 void bubble_sort(int *array, size_t size)
 {
-size_t i, nSize = size;
-int temp, flag;
+	size_t i, newsize = size;
+	int tmp, swap;
 
-if (array == NULL || size < 2)
-return;
+	if (array == NULL || size < 2)
+		return;
 
-while (nSize)
-{
-flag = 0;
-for (i = 0; i < nSize - 1; i++)
-{
-if (array[i] > array[i + 1])
-{
-temp = array[i];
-array[i] = array[i + 1];
-array[i + 1] = temp;
-print_array(array, size);
-flag = 1;
-}
-}
-nSize--;
-if (!flag)
-break;
-}
+	while (newsize)
+	{
+		swap = 0;
+		for (i = 0; i < newsize - 1; i++)
+		{
+			if (array[i] > array[i + 1])
+			{
+				tmp = array[i + 1];
+				array[i + 1] = array[i];
+				array[i] = tmp;
+				print_array(array, size);
+				swap = 1;
+			}
+		}
+		newsize--;
+		if (!swap)
+			break;
+	}
 }
